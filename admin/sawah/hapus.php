@@ -1,0 +1,1 @@
+<?php session_start();if(!isset($_SESSION["admin_id"])){header("Location: ../login.php");exit;}require_once "../../config/database.php";$id=(int)($_GET["id"]??0);if($id>0)$pdo->prepare("DELETE FROM sawah WHERE id=?")->execute([$id]);header("Location: index.php");exit;?>
